@@ -1,11 +1,13 @@
 from st_on_hover_tabs import on_hover_tabs
 import streamlit as st
 from PIL import Image
+from dashboard import *
+
 st.set_page_config(layout="wide")
 
 _,col,_ = st.columns(3)
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)
-logo = Image.open("logo.png").resize((60, 60))
+logo = Image.open("netra.png").resize((60, 60))
 st.sidebar.image(logo,)
 st.sidebar.header(' ')
 
@@ -26,11 +28,15 @@ with st.sidebar:
                                                      'margin-bottom': '30px',
                                                      'padding-left': '30px'}},
                              key="1",default_choice=0)
-
+DB = Dashboard()
 if tabs =='Dashboard':
-    st.button('1')
+    DB.dashboard_show_folium_map()
+    DB.dashboard_create_data_uploader_charts()
+    DB.dashboard_show_uploader_chart()
+    DB.dashboard_show_constituency_plots()
+    DB.dashboard_get_tags_plot()
 
-elif tabs == 'Money':
+elif tabs == 'Profile Analysis':
     st.title("Paper")
 
 elif tabs == 'Economy':
