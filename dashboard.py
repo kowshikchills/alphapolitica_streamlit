@@ -46,8 +46,28 @@ class Dashboard:
         self.df_line_chart = df_line_chart
 
     def dashboard_show_folium_map(self):
-        col,_,_ =st.columns(3)
-        col = st.header('Andhra Political Heat Map (Total Views)')
+        col,_ =st.columns(2)
+        col.markdown("""
+        <style>
+        .word1 {
+        color: #048d46;
+        font-size: 35px;
+        font-weight: bold;
+        }
+
+        .word2 {
+        color: #0565b5;
+        font-size: 35px;
+        font-weight: bold;
+        }
+        </style>
+
+        <p>
+        <span class="word1">Andhra Pradesh </span>
+        <span class="word2">Heat Map (Total Views)</span>
+        </p>
+        """, unsafe_allow_html=True)
+
         col1,col2 = st.columns([0.72,0.25])
 
         col21, col22 = col2.columns(2)
@@ -105,7 +125,27 @@ class Dashboard:
 
     def dashboard_show_uploader_chart(self):
 
-        st.header('Media Overview')
+        st.markdown("""
+        <style>
+        .word1 {
+        color: #048d46;
+        font-size: 35px;
+        font-weight: bold;
+        }
+
+        .word2 {
+        color: #0565b5;
+        font-size: 35px;
+        font-weight: bold;
+        }
+        </style>
+
+        <p>
+        <span class="word1">Media </span>
+        <span class="word2">Overview</span>
+        </p>
+        """, unsafe_allow_html=True)
+
         col,_,_ = st.columns(3)
         option = col.selectbox(
             'Media House Overview',
@@ -139,8 +179,27 @@ class Dashboard:
 
     def dashboard_show_constituency_plots(self):
 
-        col,_,_ =st.columns(3)
-        col = st.header('Andhra Constituency Graph')
+        st.markdown("""
+        <style>
+        .word1 {
+        color: #048d46;
+        font-size: 35px;
+        font-weight: bold;
+        }
+
+        .word2 {
+        color: #0565b5;
+        font-size: 35px;
+        font-weight: bold;
+        }
+        </style>
+
+        <p>
+        <span class="word1">Andhra Constituency </span>
+        <span class="word2">Graph</span>
+        </p>
+        """, unsafe_allow_html=True)
+
         col1,col2 = st.columns([0.25,0.75])
         col1.write("##")
         col1.write("##")
@@ -209,8 +268,27 @@ class Dashboard:
 
     def dashboard_get_tags_plot(self):
 
-        col,_,_ =st.columns(3)
-        col = st.header('Andhra Pradesh Topics Distribution')
+        st.markdown("""
+        <style>
+        .word1 {
+        color: #048d46;
+        font-size: 35px;
+        font-weight: bold;
+        }
+
+        .word2 {
+        color: #0565b5;
+        font-size: 35px;
+        font-weight: bold;
+        }
+        </style>
+
+        <p>
+        <span class="word1">Andhra Pradesh </span>
+        <span class="word2">Topics Distribution</span>
+        </p>
+        """, unsafe_allow_html=True)
+
         col1,col2 = st.columns([0.25,0.75])
         col1.write("##")
         col1.write("##")

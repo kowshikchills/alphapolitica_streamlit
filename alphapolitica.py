@@ -2,6 +2,7 @@ from st_on_hover_tabs import on_hover_tabs
 import streamlit as st
 from PIL import Image
 from dashboard import *
+from profile_page import *
 
 st.set_page_config(layout="wide")
 
@@ -28,8 +29,9 @@ with st.sidebar:
                                                      'margin-bottom': '30px',
                                                      'padding-left': '30px'}},
                              key="1",default_choice=0)
-DB = Dashboard()
+
 if tabs =='Dashboard':
+    DB = Dashboard()
     DB.dashboard_show_folium_map()
     DB.dashboard_create_data_uploader_charts()
     DB.dashboard_show_uploader_chart()
@@ -37,7 +39,10 @@ if tabs =='Dashboard':
     DB.dashboard_get_tags_plot()
 
 elif tabs == 'Profile Analysis':
-    st.title("Paper")
+    PP = ProfilePage()
+    PP.get_overall_chart()
+
+
 
 elif tabs == 'Economy':
     st.title("Tom")
