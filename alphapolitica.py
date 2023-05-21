@@ -41,6 +41,7 @@ if tabs =='Dashboard':
 elif tabs == 'Profile Analysis':
     PP = ProfilePage()
     PP.get_overall_chart()
+    PP.get_personal_chart()
 
 
 
