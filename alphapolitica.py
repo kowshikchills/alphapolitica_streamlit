@@ -3,6 +3,8 @@ import streamlit as st
 from PIL import Image
 from dashboard import *
 from profile_page import *
+from issue_page import *
+
 
 st.set_page_config(layout="wide")
 
@@ -43,7 +45,7 @@ elif tabs == 'Profile Analysis':
     PP.get_overall_chart()
     PP.get_personal_chart()
 
-
-
-elif tabs == 'Economy':
-    st.title("Tom")
+elif tabs == 'Issue Analysis':
+    IP = IssuesPage()
+    IP.get_overall_chart()
+    IP.get_personal_chart()
