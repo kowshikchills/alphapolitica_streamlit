@@ -34,6 +34,7 @@ with st.sidebar:
 
 if tabs =='Dashboard':
     DB = Dashboard()
+    DB.show_image()
     DB.dashboard_show_folium_map()
     DB.dashboard_create_data_uploader_charts()
     DB.dashboard_show_uploader_chart()

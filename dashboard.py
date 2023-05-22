@@ -10,13 +10,30 @@ from plotly import tools
 import streamlit as st
 import datetime
 from streamlit_folium import st_folium
-
+from PIL import Image
 
 class Dashboard:
     def __init__(self):
         self.df_upload_plot = pd.read_csv('UIdata/uploader.csv')
         self.df_folium_plot = pd.read_csv('plots_data/dashboard_folium.csv')
         self.df_tags_plot = pd.read_csv('plots_data/dashboard_tags.csv')
+
+    def show_image(self):
+        col1,col2 = st.columns([0.25,0.75])
+
+        slide = Image.open("img1.png")
+        col1.write('##')
+        col1.write('##')
+        col1.write('##')
+        col1.write('##')
+        col1.image(slide)
+        slide = Image.open("img2.png")
+        col2.image(slide)
+
+        _,col,_ = st.columns([0.4,0.2,0.4])
+        col1.write('##')
+        col1.write('##')
+        col.write('Scroll down ⇩')
     
     def dashboard_create_data_uploader_charts(self, date_start= '2022-01-01', date_end= '2024-01-01'):
 
